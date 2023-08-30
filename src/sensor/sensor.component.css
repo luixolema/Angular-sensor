@@ -1,0 +1,77 @@
+.info{
+  text-align: center;
+}
+
+.component-container {
+  width: 100%;
+  border: 0.15rem solid black;
+  border-radius: 50%;
+  margin: auto;
+  position: relative;
+}
+
+.component-container:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.center-container{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.center-point {
+  width: 4%;
+  height: 4%;
+  background-color: black;
+  border-radius: 50%;
+  margin: auto;
+  z-index: 10;
+}
+
+.arrow-container {
+  transition: all 0.4s;
+  transform: rotate(0deg);
+}
+
+.arrow {
+  width: 50%;
+  height: 0.15rem;
+  background-color: red;
+  position: relative;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  transform-origin: 100% 0%;
+  z-index: 2;
+  transform: rotate(-45deg);
+}
+
+.min,.max {
+  width: 55%;
+  height: 0.15rem;
+  background-color: black;
+  position: relative;
+  margin: auto;
+  transform-origin: 100% 0%;
+}
+.min{
+  transform: rotate(-45deg);
+  margin-left: -5%;
+}
+
+.max{
+  transform: rotate(225deg);
+  margin-left: -5%;
+}
+
+.hider{
+  background-color: white;
+  height: 90%;
+  width: 90%;
+  margin: auto;
+  border-radius: 50%;
+}

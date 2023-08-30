@@ -1,0 +1,21 @@
+<div class="component-container">
+  <div class="center-container">
+    <div class="min"></div>
+  </div>
+  <div class="center-container">
+    <div class="max"></div>
+  </div>
+
+  <div class="center-container">
+    <div class="hider"></div>
+  </div>
+
+  <div class="center-container arrow-container" [ngStyle]="{'transform': 'rotate(' + this.arrowDegrees + 'deg)'}">
+    <div class="arrow"></div>
+  </div>
+
+  <div class="center-container">
+    <div class="center-point"></div>
+  </div>
+</div>
+<h3 class="info">{{value}}<span>&#176;</span>C</h3>
