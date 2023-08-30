@@ -1,7 +1,6 @@
 import { NgStyle } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 
-
 const MAX_DEGREES = 270;
 
 @Component({
@@ -29,8 +28,11 @@ export class SensorComponent {
   }
 
   private updateWidget() {
-    const valuePercentageOfTotal = this.value * 100 / this.max;
-    this.arrowDegrees = MAX_DEGREES * valuePercentageOfTotal / 100;
+    const valuePercentageOfTotal = (this.value * 100) / this.max;
+    this.arrowDegrees = (MAX_DEGREES * valuePercentageOfTotal) / 100;
   }
 
+  get arrowStyles() {
+    return { transform: `rotate(${this.arrowDegrees}deg)` };
+  }
 }
