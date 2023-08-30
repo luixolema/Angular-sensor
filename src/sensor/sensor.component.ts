@@ -1,5 +1,5 @@
 import { NgStyle } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 const MAX_DEGREES = 270;
 
@@ -9,16 +9,19 @@ const MAX_DEGREES = 270;
   imports: [NgStyle],
   templateUrl: './sensor.component.html',
   styleUrls: ['./sensor.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SensorComponent {
   @Input() min = 0;
   @Input() max = 0;
   @Input() value = 0;
-  arrowDegrees = 0;
+  needleDegrees = 0;
 
   ngOnChanges(): void {
     if (this.value < this.min || this.value > this.max) {
-      throw new Error('Invalid parameters');
+      throw new Error(
+        `Invalid parameters: ${this.min} - ${this.value} - ${this.max}`
+      );
     }
     this.updateWidget();
   }
@@ -29,10 +32,10 @@ export class SensorComponent {
 
   private updateWidget() {
     const valuePercentageOfTotal = (this.value * 100) / this.max;
-    this.arrowDegrees = (MAX_DEGREES * valuePercentageOfTotal) / 100;
+    this.needleDegrees = (MAX_DEGREES * valuePercentageOfTotal) / 100;
   }
 
-  get arrowStyles() {
-    return { transform: `rotate(${this.arrowDegrees}deg)` };
+  get needleStyles() {
+    return { transform: `rotate(${this.needleDegrees}deg)` };
   }
 }

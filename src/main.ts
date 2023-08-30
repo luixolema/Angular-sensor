@@ -12,16 +12,18 @@ import { SensorComponent } from './sensor/sensor.component';
   styleUrls: ['./app.css'],
 })
 export class App {
+  maxValue = 100;
+  minValue = 0;
   value = 0;
 
   constructor() {
     setInterval(() => {
-      if (this.value < 100) {
+      if (this.value < this.maxValue) {
         this.value += 10;
       } else {
-        this.value = 0;
+        this.value = this.minValue;
       }
-    }, 2000);
+    }, 1000);
   }
 }
 

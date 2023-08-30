@@ -1,4 +1,8 @@
 <div style="width: 10rem">
-  <app-sensor [min]="0" [max]="100" [value]="this.value"></app-sensor>
+  <app-sensor
+    [min]="this.minValue"
+    [max]="this.maxValue"
+    [value]="this.value"
+  ></app-sensor>
   <h3 class="info">{{value}}<span>&#176;</span>C</h3>
-</div> 
+</div>
