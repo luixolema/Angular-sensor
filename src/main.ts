@@ -9,6 +9,7 @@ import { SensorComponent } from './sensor/sensor.component';
   standalone: true,
   imports: [CommonModule, SensorComponent],
   templateUrl: './app.html',
+  styles: ['./app.css']
 })
 export class App {
   value = 0;
