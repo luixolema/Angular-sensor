@@ -13,7 +13,7 @@ const MAX_DEGREES = 270;
 })
 export class SensorComponent {
   @Input() min = 0;
-  @Input() max = 0;
+  @Input() max = 100;
   @Input() value = 0;
   needleDegrees = 0;
 
@@ -31,7 +31,7 @@ export class SensorComponent {
   }
 
   private updateWidget() {
-    const valuePercentageOfTotal = (this.value * 100) / this.max;
+    const valuePercentageOfTotal = ((this.value - this.min) * 100) / (this.max - this.min);
     this.needleDegrees = (MAX_DEGREES * valuePercentageOfTotal) / 100;
   }
 

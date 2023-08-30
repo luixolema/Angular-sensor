@@ -12,7 +12,7 @@ import { SensorComponent } from './sensor/sensor.component';
   styleUrls: ['./app.css'],
 })
 export class App {
-  maxValue = 100;
+  maxValue = 220;
   minValue = 0;
   value = 0;
 
@@ -23,7 +23,7 @@ export class App {
       } else {
         this.value = this.minValue;
       }
-    }, 1000);
+    }, 800);
   }
 }
 
